@@ -1,4 +1,7 @@
 from bottle import get,run,Bottle,route
+import os
+
+PORT = int(os.environ['LEANCLOUD_APP_PORT'])
 
 app = Bottle()
 
@@ -7,5 +10,5 @@ def welcome():
 	return "Hello, welcome to knowurcoding!"
 
 if __name__=="__main__":
-	run(app, host='localhost', port=8088)
+	run(app, host='localhost', port=PORT)
 
