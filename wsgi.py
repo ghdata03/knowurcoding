@@ -1,5 +1,7 @@
 from bottle import get,run,Bottle,route
 import os,leancloud
+from leancloud import Engine
+
 
 PORT = int(os.environ['LEANCLOUD_APP_PORT'])
 APP_ID = os.environ['LEANCLOUD_APP_ID']                
@@ -14,6 +16,8 @@ app = Bottle()
 @app.get('/')
 def welcome():
 	return "Hello, welcome to knowurcoding!"
+
+engine = Engine(app)
 
 if __name__=="__main__":
 	run(app, host='localhost', port=PORT)
