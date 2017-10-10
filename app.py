@@ -4,6 +4,6 @@ app = Bottle()
 
 @app.get('/')
 def welcome():
-    return "Hello, welcome to knowurcoding!"
+    return "Hello, welcome to knowurcoding! This is automatically deployed."
 
 
