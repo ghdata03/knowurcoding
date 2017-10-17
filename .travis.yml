@@ -6,4 +6,4 @@ install:
 script:
   - pytest
 after_success:
-  - python scripts/webhooks.py
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then python scripts/webhooks.py; fi'
